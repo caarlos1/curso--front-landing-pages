@@ -6,5 +6,17 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
   }
 
-  body{}
+  html{
+    // para utilizar rem como pixel. ex: 1.6rem = 16px
+    font-size: 62.5%;
+  }
+
+  body{
+    font-size: 1.6rem;
+    font-family: ${({ theme }) => theme.fonts.family.default};
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: ${({ theme }) => theme.fonts.family.secondary};
+  }
 `;
