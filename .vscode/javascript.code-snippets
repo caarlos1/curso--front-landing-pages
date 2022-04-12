@@ -1,0 +1,38 @@
+{
+  "💩 Styled Component": {
+    "scope": "javascript",
+    "prefix": "styled",
+    "body": [
+      "import styled, { css } from 'styled-components';",
+      "",
+      "export const Container = styled.div`",
+      "  ${({ theme }) => css``}",
+      "`;",
+      ""
+    ],
+    "description": "Styled Component"
+  },
+
+  "💩 React Component": {
+    "scope": "javascript, javascriptreact",
+    "prefix": "react component",
+    "body": [
+      "import P from 'prop-types';",
+      "import * as Styled from './styles';",
+      "",
+      "export const $1 = () => {",
+      "  return (",
+      "    <Styled.Container>",
+      "      <h1>$1</h1>",
+      "    </Styled.Container>",
+      "  );",
+      "};",
+      "",
+      "$1.propTypes = {",
+      "  children: P.node.isRequired,",
+      "};",
+      ""
+    ],
+    "description": "React Component"
+  }
+}
