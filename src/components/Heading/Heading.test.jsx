@@ -48,7 +48,7 @@ describe('<Heading />', () => {
     renderTheme(<Heading size="huge">huge</Heading>);
 
     expect(screen.getByRole('heading', { name: 'huge' })).toHaveStyleRule('font-size', theme.fonts.sizes.xlarge, {
-      media: theme.fonts.media.lteMedium,
+      media: theme.media.lteMedium,
     });
   });
 

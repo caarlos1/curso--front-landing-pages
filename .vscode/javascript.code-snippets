@@ -1,29 +1,29 @@
 {
-  "💩 Styled Component": {
-    "scope": "javascript",
-    "prefix": "styled",
+  "💩 React.js Styled Component": {
+    "scope": "javascript, javascriptreact",
+    "prefix": "react styled",
     "body": [
       "import styled, { css } from 'styled-components';",
       "",
       "export const Container = styled.div`",
-      "  ${({ theme }) => css``}",
+      "  ${() => css``}",
       "`;",
       ""
     ],
-    "description": "Styled Component"
+    "description": "Create a default Styled Component."
   },
 
-  "💩 React Component": {
+  "💩 React.js Component": {
     "scope": "javascript, javascriptreact",
     "prefix": "react component",
     "body": [
       "import P from 'prop-types';",
       "import * as Styled from './styles';",
       "",
-      "export const $1 = () => {",
+      "export const $1 = ({ children }) => {",
       "  return (",
       "    <Styled.Container>",
-      "      <h1>$1</h1>",
+      "      <h1>{children}</h1>",
       "    </Styled.Container>",
       "  );",
       "};",
@@ -33,6 +33,54 @@
       "};",
       ""
     ],
-    "description": "React Component"
+    "description": "Create a default React Component."
+  },
+
+  "💩 React.js StoryBook Component": {
+    "scope": "javascript, javascriptreact",
+    "prefix": "react storybook",
+    "body": [
+      "import { $1 } from '.';",
+      "",
+      "export default {",
+      "  title: '$1',",
+      "  component: $1,",
+      "  args: {",
+      "    children: '$1',",
+      "  },",
+      "  argTypes: {",
+      "    children: { type: 'string' },",
+      "  },",
+      "};",
+      "",
+      "export const Template = (args) => {",
+      "  return (",
+      "    <div>",
+      "      <$1 {...args} />",
+      "    </div>",
+      "  );",
+      "};",
+      ""
+    ],
+    "description": "Create a default StoryBook doc."
+  },
+
+  "💩 React.js Tests": {
+    "scope": "javascript, javascriptreact",
+    "prefix": "react tests",
+    "body": [
+      "import { screen } from '@testing-library/react';",
+      "import { renderTheme } from 'styles/render-theme';",
+      "import { $1 } from '.';",
+      "",
+      "describe('<$1 />', () => {",
+      "  it('should render', () => {",
+      "    renderTheme(<$1>Children</$1>);",
+      "    expect(screen.getByRole('heading')).toBeInTheDocument();",
+      "  });",
+      "});",
+      ""
+    ],
+    "description": "Create a default React.js test."
   }
 }
